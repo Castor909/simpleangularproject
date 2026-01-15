@@ -31,19 +31,19 @@ export class App {
     const guessValue = this.guess();
     
     if (!guessValue) {
-      this.message.set('Введи число!');
+      this.message.set('Please enter a number!');
       return;
     }
 
     this.attempts.update(a => a + 1);
 
     if (guessValue === this.secretNumber()) {
-      this.message.set(`Правильно! 🎉 Ты угадал за ${this.attempts()} попыток!`);
+      this.message.set(`Correct! 🎉 You guessed it in ${this.attempts()} ${this.attempts() === 1 ? 'attempt' : 'attempts'}!`);
       this.gameOver.set(true);
     } else if (guessValue < this.secretNumber()) {
-      this.message.set('Число больше ⬆️');
+      this.message.set('The number is higher ⬆️');
     } else {
-      this.message.set('Число меньше ⬇️');
+      this.message.set('The number is lower ⬇️');
     }
   }
 }

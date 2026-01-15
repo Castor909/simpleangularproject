@@ -1,5 +1,5 @@
 <div style="text-align: center; padding: 40px; font-family: Arial, sans-serif;">
-  <h1>🎲 Угадай число от 1 до 100</h1>
+  <h1>🎲 Guess the Number from 1 to 100</h1>
   
   <div *ngIf="!gameOver()">
     <input 
@@ -7,7 +7,7 @@
       [(ngModel)]="guess" 
       min="1" 
       max="100"
-      placeholder="Введи число"
+      placeholder="Enter a number"
       (keyup.enter)="checkGuess()"
       style="padding: 10px; font-size: 16px; width: 150px;"
     >
@@ -15,18 +15,18 @@
       (click)="checkGuess()" 
       style="padding: 10px 20px; margin-left: 10px; font-size: 16px; cursor: pointer; background: #2196F3; color: white; border: none; border-radius: 4px;"
     >
-      Проверить
+      Check
     </button>
   </div>
 
   <p *ngIf="message()" style="font-size: 18px; margin: 20px 0; color: #333;">{{ message() }}</p>
-  <p *ngIf="attempts() > 0" style="color: #666; font-size: 16px;">Попыток: {{ attempts() }}</p>
+  <p *ngIf="attempts() > 0" style="color: #666; font-size: 16px;">Attempts: {{ attempts() }}</p>
 
   <button 
     (click)="startGame()" 
     style="padding: 10px 20px; margin-top: 20px; font-size: 16px; cursor: pointer; background: #4CAF50; color: white; border: none; border-radius: 4px;"
   >
-    {{ gameOver() ? 'Играть ещё' : 'Новая игра' }}
+    {{ gameOver() ? 'Play Again' : 'New Game' }}
   </button>
 </div>
 
